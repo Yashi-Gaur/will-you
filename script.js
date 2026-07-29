@@ -489,4 +489,6 @@ yesBtn.addEventListener("click", () => {
   document.getElementById("proposal-question").classList.add("hidden");
   document.getElementById("proposal-yay").classList.remove("hidden");
   noBtn.classList.add("hidden");
+
+  sendEmail("He said YES!", "Anubhav said yes!!").catch((err) => console.error(err));
 });
