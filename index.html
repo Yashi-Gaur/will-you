@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>a question for you 🌷</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="viewport-block">
+  <div class="viewport-block-card">
+    <p class="viewport-block-emoji">💌</p>
+    <p>I told you to open it on your laptop!!!<br />This is why you should listen to me :).</p>
+  </div>
+</div>
+
+<div id="floaters"></div>
+
+<div id="app">
+
+  <!-- ===================== SCREEN 1: LOGIN ===================== -->
+  <section class="screen active" id="screen-login">
+    <div class="card">
+      <h1 class="script">hii 🌷</h1>
+      <p class="subtitle">Enter your name to prove your identity</p>
+
+      <input type="text" id="name-input" class="name-input" placeholder="Your name" autocomplete="off" />
+      <div class="hint">(This box has only one right answer)</div>
+
+      <button class="btn" id="get-code-btn">Get Secret Code 💌</button>
+      <div class="status-msg" id="login-status"></div>
+
+      <div class="code-block hidden" id="code-block">
+        <p class="subtitle" style="margin-bottom:14px;">Enter the secret code you were given</p>
+        <input type="text" id="code-input" class="name-input" placeholder="Secret code" autocomplete="off" />
+        <div style="height:16px;"></div>
+        <button class="btn" id="welcome-btn" disabled>Welcome 🌸</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SCREEN 2: QUESTIONS ===================== -->
+  <section class="screen" id="screen-questions">
+    <div class="card">
+      <div class="progress-dots">
+        <span class="dot" data-dot="1"></span>
+        <span class="dot" data-dot="2"></span>
+        <span class="dot" data-dot="3"></span>
+      </div>
+
+      <!-- Q1 -->
+      <div class="question" id="question-1">
+        <h2 class="question-title">What's your favourite flower? 🌸</h2>
+        <p class="question-sub">Pick one</p>
+        <div class="options-grid" id="q1-options">
+          <div class="option-card" data-value="Rose">
+            <img src="flower_rose.jpeg" alt="Rose" />
+            <span>Rose</span>
+            <div class="radio-dot"></div>
+          </div>
+          <div class="option-card" data-value="Dahlia">
+            <img src="flower_dhalia.jpg" alt="Dahlia" />
+            <span>Dahlia</span>
+            <div class="radio-dot"></div>
+          </div>
+          <div class="option-card" data-value="Sunflower">
+            <img src="flower_sunflower.jpg" alt="Sunflower" />
+            <span>Sunflower</span>
+            <div class="radio-dot"></div>
+          </div>
+          <div class="option-card" data-value="Peony">
+            <img src="flower_peony.jpg" alt="Peony" />
+            <span>Peony</span>
+            <div class="radio-dot"></div>
+          </div>
+          <div class="option-card" data-value="Daisy">
+            <img src="flower_daisy.jpg" alt="Daisy" />
+            <span>Daisy</span>
+            <div class="radio-dot"></div>
+          </div>
+          <div class="option-card" data-value="Orchid">
+            <img src="flower_orchid.jpg" alt="Orchid" />
+            <span>Orchid</span>
+            <div class="radio-dot"></div>
+          </div>
+          <div class="option-card" data-value="Lily">
+            <img src="flower_lily.jpg" alt="Lily" />
+            <span>Lily</span>
+            <div class="radio-dot"></div>
+          </div>
+          <div class="option-card" data-value="__other__">
+            <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="20" fill="none" stroke="#e7b6c6" stroke-width="3" stroke-dasharray="6 6"/><text x="32" y="39" font-size="22" text-anchor="middle" fill="#e7b6c6">?</text></svg>
+            <span>Other</span>
+            <div class="radio-dot"></div>
+          </div>
+        </div>
+        <input type="text" id="q1-other-input" class="other-input hidden" placeholder="Tell me..." />
+      </div>
+
+      <!-- Q2 -->
+      <div class="question hidden" id="question-2">
+        <h2 class="question-title">What would you like to learn on a date? 💃</h2>
+        <p class="question-sub">Pick as many as you like</p>
+        <div class="options-grid" id="q2-options">
+          <div class="option-card list-style" data-value="Dancing"><div class="check-badge">✓</div><span>Dancing</span></div>
+          <div class="option-card list-style" data-value="Painting"><div class="check-badge">✓</div><span>Painting</span></div>
+          <div class="option-card list-style" data-value="Crochet"><div class="check-badge">✓</div><span>Crochet</span></div>
+          <div class="option-card list-style" data-value="Knitting"><div class="check-badge">✓</div><span>Knitting</span></div>
+          <div class="option-card list-style" data-value="Pottery"><div class="check-badge">✓</div><span>Pottery</span></div>
+          <div class="option-card list-style" data-value="Making a new dish"><div class="check-badge">✓</div><span>Making a new dish</span></div>
+          <div class="option-card list-style" data-value="Shooting"><div class="check-badge">✓</div><span>Shooting</span></div>
+          <div class="option-card list-style" data-value="Skating"><div class="check-badge">✓</div><span>Skating</span></div>
+          <div class="option-card list-style" data-value="__other__"><div class="check-badge">✓</div><span>Other</span></div>
+        </div>
+        <input type="text" id="q2-other-input" class="other-input hidden" placeholder="Tell me..." />
+      </div>
+
+      <!-- Q3 -->
+      <div class="question hidden" id="question-3">
+        <h2 class="question-title">What's a dating clichè you like? 🥂</h2>
+        <p class="question-sub">E.g. mine is "stealing your hoodie"</p>
+        <div class="options-grid" id="q3-options">
+          <div class="option-card list-style" data-value="Kissing in the rain"><div class="radio-dot"></div><span>Kissing in the rain</span></div>
+          <div class="option-card list-style" data-value="Dancing round the kitchen in the fridge light"><div class="radio-dot"></div><span>Dancing round the kitchen in the refrigerator light</span></div>
+          <div class="option-card list-style" data-value="A long drive that ends in flames or paradise"><div class="radio-dot"></div><span>Long drive could end in burning flames or paradise</span></div>
+          <div class="option-card list-style" data-value="Staring at the sunset in a nice dress"><div class="radio-dot"></div><span>Standing in a nice dress staring at the sunset</span></div>
+          <div class="option-card list-style" data-value="Secret moments in a crowded room"><div class="radio-dot"></div><span>Secret moments in a crowded room</span></div>
+          <div class="option-card list-style" data-value="To kiss in cars and downtown bars"><div class="radio-dot"></div><span>To kiss in cars and downtown bars</span></div>
+          <div class="option-card list-style" data-value="__other__"><div class="radio-dot"></div><span>Other</span></div>
+        </div>
+        <input type="text" id="q3-other-input" class="other-input hidden" placeholder="Tell me..." />
+      </div>
+
+      <div class="nav-row">
+        <button class="btn secondary hidden" id="back-btn">← Back</button>
+        <div class="spacer"></div>
+        <button class="btn" id="next-btn" disabled>Next →</button>
+        <button class="btn hidden" id="submit-btn" disabled>Submit 💕</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SCREEN 3: THANK YOU ===================== -->
+  <section class="screen" id="screen-thankyou">
+    <div class="card">
+      <h2 class="script">Thank you for your responses!</h2>
+      <p class="subtitle">I have already planned this date, and these responses will be used for future dates :)</p>
+      <button class="arrow-btn" id="thankyou-arrow">→</button>
+    </div>
+  </section>
+
+  <!-- ===================== SCREEN 4: PROPOSAL ===================== -->
+  <section class="screen" id="screen-proposal">
+    <div class="card proposal-card">
+
+      <div id="proposal-question">
+        <h1 class="proposal-title">Will you go out with me this Sunday, Anubhav?</h1>
+        <img src="main_page_base.jpg" alt="" class="proposal-img" id="proposal-img" />
+
+        <div class="button-area" id="button-area">
+          <button class="btn yes-btn" id="yes-btn">Yes 🥰</button>
+          <div class="no-btn-placeholder" id="no-btn-placeholder" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div id="proposal-yay" class="hidden">
+        <h1 class="yay-title">YAYY! See youu soon!!</h1>
+        <p class="yay-sub">Future details will be conveyed to you soon!</p>
+        <img src="yes_gif.gif" alt="" class="yay-gif" />
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<!-- Lives outside #app so it can roam the whole viewport via position:fixed,
+     unaffected by any ancestor's transform/animation. -->
+<button class="btn no-btn hidden" id="no-btn">No</button>
+
+<audio id="no-audio" src="no_audio.m4a" preload="auto"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
